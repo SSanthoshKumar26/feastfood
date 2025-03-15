@@ -7,7 +7,7 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("");
     const [food_list, setFoodList] = useState([]);
-    const url = process.env.REACT_APP_API_URL || "http://localhost:7007";
+    const url = process.env.REACT_APP_API_URL || "https://backend-3dxi.onrender.com";
 
     // Add item to the cart
     const addToCart = async (itemId) => {
