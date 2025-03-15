@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* List Container */
+  .list {
+    width: 100%; /* Full width of the page */
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .list p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  /* Table Header and Rows */
+  .list-table {
+    width: 90%; /* Adjusted to a normal width */
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+  }
+  
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    align-items: center;
+    padding: 0.8rem 1rem; /* Normal padding for a balanced row height */
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .list-table-format b {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* Alternating Row Colors */
+  .list-table-format:nth-child(odd) {
+    background-color: #f8f8f8;
+  }
+  
+  .list-table-format:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  /* Content Styling */
+  .list-table-format img {
+    width: 60px; /* Normal image size */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+  
+  .list-table-format p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .list-table-format p:last-child {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .list-table-format p:last-child:hover {
+    transform: scale(1.1);
+    color: darkred;
+  }
+  
+  /* Additions for Responsiveness */
+  @media (max-width: 768px) {
+    .list-table {
+      width: 95%; /* Adjusted for smaller screens */
+    }
+  
+    .list-table-format {
+      grid-template-columns: 1fr 1fr;
+      font-size: 0.9rem; /* Adjusted font size */
+    }
+  
+    .list-table-format img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  

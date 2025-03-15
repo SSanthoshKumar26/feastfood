@@ -1,0 +1,79 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 18%;
+    min-height: 100vh;
+    border: 1.5px solid #a9a9a9;
+    border-top: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Wrapper for each option */
+  .sidebar-option {
+    width: 100%;
+  }
+  
+  /* Sidebar Option Styling */
+  .sidebar-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Border around each option */
+    background-color: #fff;
+  }
+  
+  /* Active Link Styling */
+  .sidebar-options.active {
+    background-color: #fff0ed;
+    border-color: tomato; /* Highlight with a tomato-colored border */
+  }
+  
+ 
+  
+  /* Icon Styling */
+  .sidebar-options img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Text Styling */
+  .sidebar-options p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Media Query for Responsive Sidebar */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .sidebar-options {
+      padding: 10px 15px;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+  
+    .sidebar-options img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .sidebar-options p {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,287 @@
+
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px; /* Add rounded edges to the header container */
+  margin: 20px; /* Add some margin for better visibility of rounded corners */
+  margin-top: 70px;
+
+}
+
+/* Background video with parallax effect */
+/* Ensure the background container is taking full width and height */
+
+/* Zoom in and out animation for the background video */
+@keyframes zoomInOut {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+/* Styling the text container */
+.header-contents {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* General styles for the header component */
+/* Header Title Styling with Gradient */
+
+
+/* Title Falling and Hanging Animation */
+.header-contents h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: 5px;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: hidden;
+  background: linear-gradient(90deg, white, goldenrod, tomato);
+  background-size: 300% 300%; /* Larger background for smooth gradient animation */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes the gradient visible */
+  animation: fallAndHang 2s ease-out, swing 1.5s ease-in-out 2.2s infinite alternate, gradientShift 6s infinite ease-in-out;
+}
+
+/* Fall from the top */
+@keyframes fallAndHang {
+  0% {
+    transform: translateY(-100vh); /* Start above the viewport */
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(10px); /* Slight bounce effect */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0); /* Settle into place */
+  }
+}
+
+/* Swing effect */
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Gradient shift animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/* Animated underline for h2 */
+.header-contents h2 {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: #fff;
+  position: relative;
+  animation: slideIn 3s infinite;
+}
+
+.header-contents h2::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: #FFA500;
+  margin: 10px auto 0;
+  animation: underline 2s infinite ease-in-out;
+}
+
+@keyframes underline {
+  0%, 100% {
+      width: 60%;
+  }
+  50% {
+      width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  0%, 100% {
+      opacity: 0.8;
+      transform: translateX(-15px);
+  }
+  50% {
+      transform: translateX(15px);
+      opacity: 1;
+  }
+}
+
+/* Animated paragraph text */
+.header-contents p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px 0;
+  animation: fadeInUp 4s infinite alternate;
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Call-to-action button with ripple effect */
+.header-contents button {
+  background: linear-gradient(90deg, #FFD700, #FF4500);
+  color: #000;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-contents button::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple 1s infinite;
+}
+
+@keyframes ripple {
+  0% {
+      transform: scale(0.5) translate(-50%, -50%);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2) translate(-50%, -50%);
+      opacity: 0;
+  }
+}
+
+.header-contents button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-contents h1 {
+      font-size: 2.8rem;
+  }
+
+  .header-contents h2 {
+      font-size: 1.5rem;
+  }
+
+  .header-contents p {
+      font-size: 1rem;
+  }
+
+  .header-contents button {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-contents h1 {
+      font-size: 2rem;
+  }
+
+  .header-contents h2 {
+      font-size: 1.2rem;
+  }
+
+  .header-contents p {
+      font-size: 0.9rem;
+  }
+
+  .header-contents button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+  }
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure the video stays behind the other content */
+}
+
+/* Video styles */
+.background-container video {
+  width: 200%;  /* Full width */
+  height: 90%; /* Full height */
+  object-fit: cover; /* Ensures the video covers the entire container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(50%);
+  z-index: -1; /* Ensures the video stays in the background */
+  animation: zoomInOut 15s infinite alternate ease-in-out;
+}
+
+/* Ensure video animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+

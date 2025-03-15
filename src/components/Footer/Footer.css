@@ -1,0 +1,152 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-content-left,
+.footer-content-center,
+.footer-content-right {
+  flex: 1;
+}
+
+.footer h1 {
+  font-size: 2rem;
+  color: tomato;
+  padding-bottom: 12px;
+}
+
+.footer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: tomato;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.footer h2::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background-color: tomato;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -3px;
+}
+
+.footer p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: auto;
+}
+
+.footer-social-icons img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  padding-top: 20px;
+}
+
+.footer-social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+.footer-content-center ul,
+.footer-content-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content-center ul li,
+.footer-content-right ul li {
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-content-center ul li:hover,
+.footer-content-right ul li:hover {
+  color: tomato;
+}
+
+/* Hover Effect as Line Under Section */
+.footer-toggle-section {
+  cursor: pointer;
+  padding: 10px;
+  color: #ddd;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  margin-bottom: 10px;
+  position: relative;
+  display: block; /* Make the section display as block for vertical stacking */
+}
+
+.footer-toggle-section:hover {
+  color: tomato;
+}
+
+.footer-toggle-section:hover::after {
+  transform: translateX(-50%) scaleX(1); /* Show line on hover */
+  width: 100%; /* Makes the line match the text width */
+}
+
+/* Content visibility on click */
+.footer-toggle-content {
+  display: none;
+  color: #ddd;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+.footer-toggle-content.active {
+  display: block;
+}
+
+.footer hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #FFD700;
+  transition: width 0.3s ease;
+}
+
+.footer hr:hover {
+  width: 80%;
+}
+
+.footer:hover hr {
+  border-top: 1px solid #FFD700;
+}
+
+.footer p.footer-copyright {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* Vertical Layout for Footer Links */
+.footer-links {
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center; /* Align them in the center */
+}
+
+.footer-links .footer-toggle-section {
+  margin-bottom: 15px; /* Adds space between items */
+}

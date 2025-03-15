@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap');
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color:white;
+}
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color:white;
+}
+
+.explore-menu h1 {
+    color: tomato;
+    
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    width: 500px;
+    text-align: center;
+}
+
+.explore-menu-text {
+    max-width: 70%;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: none; /* Remove animation transitions */
+}
+
+.explore-menu-list-item:hover {
+    transform: none; /* No movement on hover */
+    box-shadow: none; /* Remove shadow on hover */
+}
+
+.explore-menu-list-item img {
+    width: 8vw;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 50%;
+    box-shadow: none; /* No shadow for images */
+    transition: none; /* Remove animation transitions */
+}
+
+.explore-menu-list-item img.active {
+    border: 4px solid tomato;
+    padding: 4px;
+    transform: none; /* Remove scale effect */
+}
+
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: tomato;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.explore-menu-list-item p:hover {
+    color: #333; /* Optional text color change */
+}
+
+.explore-menu hr {
+    width: 80%;
+    height: 2px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .explore-menu h1 {
+        font-size: 2rem;
+    }
+    .explore-menu-text {
+        max-width: 90%;
+        font-size: 0.9rem;
+    }
+    .explore-menu-list-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
+/* Media Queries for Responsiveness */
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .explore-menu h1 {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    .explore-menu-text {
+        max-width: 90%;
+        font-size: 0.9rem;
+    }
+    .explore-menu-list-item img {
+        width: 40px;
+        height: 40px;
+    }
+    .explore-menu-list {
+        gap: 10px;
+    }
+    .explore-menu-list-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices (481px to 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .explore-menu h1 {
+        font-size: 2rem;
+        width: 80%;
+    }
+    .explore-menu-text {
+        max-width: 85%;
+        font-size: 1rem;
+    }
+    .explore-menu-list-item img {
+        width: 50px;
+        height: 50px;
+    }
+    .explore-menu-list {
+        gap: 15px;
+    }
+    .explore-menu-list-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Tablets (601px to 768px) */
+/* Media Queries for Responsiveness */
+
+/* Small Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    .explore-menu h1 {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    .explore-menu-text {
+        max-width: 90%;
+        font-size: 0.9rem;
+    }
+    .explore-menu-list-item img {
+        width: 40px;
+        height: 40px;
+    }
+    .explore-menu-list {
+        gap: 10px;
+    }
+    .explore-menu-list-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices (481px to 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .explore-menu h1 {
+        font-size: 2rem;
+        width: 80%;
+    }
+    .explore-menu-text {
+        max-width: 85%;
+        font-size: 1rem;
+    }
+    .explore-menu-list-item img {
+        width: 50px;
+        height: 50px;
+    }
+    .explore-menu-list {
+        gap: 15px;
+    }
+    .explore-menu-list-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Tablets (601px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .explore-menu h1 {
+        font-size: 2rem;
+    }
+    .explore-menu-text {
+        max-width: 90%;
+        font-size: 1rem;
+    }
+    .explore-menu-list-item img {
+        width: 60px;
+        height: 60px;
+    }
+    .explore-menu-list {
+        gap: 20px;
+    }
+    .explore-menu-list-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Small Desktop / Large Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .explore-menu h1 {
+        font-size: 2.2rem;
+        width: 70%;
+    }
+    .explore-menu-text {
+        max-width: 80%;
+        font-size: 1rem;
+    }
+    .explore-menu-list-item img {
+        width: 7vw;
+        min-width: 60px;
+        height: 60px;
+    }
+    .explore-menu-list {
+        gap: 20px;
+    }
+    .explore-menu-list-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop Devices (1025px and above) */
+@media (min-width: 1025px) {
+    .explore-menu h1 {
+        font-size: 2.5rem;
+        width: 500px;
+    }
+    .explore-menu-text {
+        max-width: 70%;
+        font-size: 1rem;
+    }
+    .explore-menu-list-item img {
+        width: 8vw;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    .explore-menu-list {
+        gap: 20px;
+    }
+    .explore-menu-list-item p {
+        font-size: 1rem;
+    }
+}

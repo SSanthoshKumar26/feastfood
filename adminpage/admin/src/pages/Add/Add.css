@@ -1,0 +1,136 @@
+/* General container styling */
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the screen */
+  background-color: #f4f7fc; /* Light gray background for the container */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  
+ 
+  position: relative;
+  
+}
+
+/* Form structure */
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 200%;
+  max-width: 800px; /* Increased width of the form */
+  background-color: white; /* Explicit white background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  outline: none; /* Removes any focus outline */
+}
+
+/* Image upload section */
+.add-img-upload {
+  text-align: center;
+  margin-bottom: 20px; /* Spacing below the image upload */
+  width: 100%;
+  height: 150px; /* Set a fixed height for the image upload area */
+  max-width: 200px; /* Optional: Adjust the width as needed */
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto; /* Center horizontally */
+}
+
+.add-img-upload label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.add-img-upload label:hover {
+  background-color: #f4f4f4; /* Optional: Subtle hover effect */
+}
+
+.add-img-upload img {
+  width: 100%; /* Make image fill the container */
+  height: 100%; /* Make image fill the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  border-radius: 10px; /* Rounded edges for the image */
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0077b6;
+  outline: none; /* Ensures no blue outline appears */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  outline: none; /* Removes focus outline */
+  transition: border-color 0.3s ease;
+}
+
+
+
+/* Category and Price Section */
+.add-category-price {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.add-category-price .form-group {
+  flex: 1;
+}
+
+/* Submit button styling */
+.add-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: tomato;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #e03e00;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-category-price {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

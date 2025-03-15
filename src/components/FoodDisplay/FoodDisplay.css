@@ -1,0 +1,25 @@
+
+.food-display {
+    margin-top: 30px;
+    max-width: 80%; /* Reduce the width to 80% of its container */
+    margin-left: auto; /* Center the content horizontally */
+    margin-right: auto; /* Center the content horizontally */
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    
+  }
+  
+  .food-display h2 {
+    font-size: max(2vw, 24px);
+    font-weight: 600;
+    text-align: center;
+    color: tomato ;
+  }
+  
+  .food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;
+  }
+  
