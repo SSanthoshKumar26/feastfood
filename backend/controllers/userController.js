@@ -1,23 +1,22 @@
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-
 import validator from "validator";
 
 // Create JWT Token with expiration time
 const createToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '7d' }); // Token expires in 7 days
+    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" }); // Token expires in 7 days
 };
 
 // Login User
 const loginUser = async (req, res) => {
-    const { email, password } = req.body;
-
-    if (!email || !password) {
-        return res.status(400).json({ success: false, message: "Email and password are required" });
-    }
-
     try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({ success: false, message: "Email and password are required" });
+        }
+
         const user = await userModel.findOne({ email });
         if (!user) {
             return res.status(404).json({ success: false, message: "User does not exist" });
@@ -38,28 +37,29 @@ const loginUser = async (req, res) => {
 
 // Register User
 const registerUser = async (req, res) => {
-    const { name, password, email } = req.body;
-
-    // Validate input
-    if (!name || !email || !password) {
-        return res.status(400).json({ success: false, message: "All fields are required" });
-    }
-
     try {
-        // Check if the user already exists
-        const exists = await userModel.findOne({ email });
-        if (exists) {
-            return res.status(400).json({ success: false, message: "User already exists" });
+        if (!req.body || Object.keys(req.body).length === 0) {
+            return res.status(400).json({ success: false, message: "Request body is empty" });
         }
 
-        // Validate email format
+        const { name, password, email } = req.body;
+
+        if (!name || !email || !password) {
+            return res.status(400).json({ success: false, message: "All fields are required" });
+        }
+
         if (!validator.isEmail(email)) {
             return res.status(400).json({ success: false, message: "Invalid email format" });
         }
 
-        // Validate password length (minimum 8 characters)
         if (password.length < 8) {
             return res.status(400).json({ success: false, message: "Password must be at least 8 characters long" });
+        }
+
+        // Check if user already exists
+        const existingUser = await userModel.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ success: false, message: "User already exists" });
         }
 
         // Hash the password
@@ -67,19 +67,14 @@ const registerUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         // Create a new user object
-        const newUser = new userModel({
-            name,
-            email,
-            password: hashedPassword,
-        });
+        const newUser = new userModel({ name, email, password: hashedPassword });
 
         // Save the user to the database
-        const user = await newUser.save();
+        const savedUser = await newUser.save();
 
-        // Create JWT token for the new user
-        const token = createToken(user._id);
+        // Generate JWT token
+        const token = createToken(savedUser._id);
 
-        // Send success response with the token
         res.status(201).json({ success: true, token });
     } catch (error) {
         console.error("Error in registerUser:", error.message);
