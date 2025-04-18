@@ -33,6 +33,6 @@ app.get("/", (req, res) => {
 });
 
 // Start the server
-app.listen(7007, () => {
+app.listen(7007,'0.0.0.0', () => {
   console.log('Server is running on port 7007');
 });
